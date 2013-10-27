@@ -19,8 +19,10 @@ unix {
 }
 
 SOURCES += main.cpp \
-    engine.cpp
+    engine.cpp \
+    game.cpp
 
 HEADERS += \
     globals.h \
-    engine.h
+    engine.h \
+    game.h

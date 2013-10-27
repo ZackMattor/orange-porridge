@@ -12,7 +12,7 @@ int engine::init() {
     if(!al_init())
     {
         qDebug() << "Allegro Init is failing!";
-        //return -1;
+        return -1;
     }
 
     al_set_new_display_flags(ALLEGRO_RESIZABLE);
@@ -22,11 +22,15 @@ int engine::init() {
     if(!m_display)
     {
         qDebug() << "Display is failing!";
-        //return -1;
+        return -1;
     }
 
     al_install_keyboard();
     al_install_mouse();
+
+    m_gameInstance = new game();
+
+    return 1;
 }
 
 void engine::run() {
@@ -50,7 +54,7 @@ void engine::run() {
 
     al_start_timer(timer);
 
-    while(m_gameState != CLOSE)
+    while(m_gameInstance->getGameState() != CLOSE)
     {
         QCoreApplication::processEvents();
         ALLEGRO_EVENT ev;
@@ -64,7 +68,7 @@ void engine::run() {
             break;
 
             case ALLEGRO_EVENT_DISPLAY_CLOSE:
-                m_gameState = CLOSE;
+                m_gameInstance->setGameState(CLOSE);
             break;
 
             case ALLEGRO_EVENT_KEY_DOWN:
@@ -91,7 +95,7 @@ void engine::run() {
             //FLIP BUFFERS
             al_flip_display();
 
-            if(m_gameState != GAME) //game takes care of it's own background
+            if(m_gameInstance->getGameState() != GAME) //game takes care of it's own background
             {
                 if(m_background != NULL)
                 {

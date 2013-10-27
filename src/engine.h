@@ -6,6 +6,7 @@
 #include <QDebug>
 
 #include <QtCore/QTime>
+#include "game.h"
 #include "globals.h"
 
 class engine
@@ -16,7 +17,7 @@ public:
     int init();
     void run();
 private:
-    int m_gameState = LOADING;
+    game *m_gameInstance;
     bool m_keys[255] = {false};
     ALLEGRO_MOUSE_EVENT m_mouse;
     ALLEGRO_DISPLAY *m_display = NULL;
