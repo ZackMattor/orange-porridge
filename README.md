@@ -20,3 +20,7 @@ game.h
 When the engine is spun up it starts rendering data from game.h
 
 Should incluse both Draw() and Update() functions.
+
+entity.h
+---------------
+Base class for all entities in the game. Contains information such as position, velocity, an ID, rotation, etc.
