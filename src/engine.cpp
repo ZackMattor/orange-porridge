@@ -28,7 +28,7 @@ int engine::init() {
     al_install_keyboard();
     al_install_mouse();
 
-    m_gameInstance = new game();
+    m_gameInstance = new gameManager();
 
     return 1;
 }
@@ -64,7 +64,7 @@ void engine::run() {
         {
             case ALLEGRO_EVENT_TIMER:
                 redraw = true;
-                //Update();
+                m_gameInstance->Update();
             break;
 
             case ALLEGRO_EVENT_DISPLAY_CLOSE:
@@ -90,7 +90,7 @@ void engine::run() {
         {
             //cout << "Drawing";
             redraw = false;
-           //draw();
+            m_gameInstance->Draw();
 
             //FLIP BUFFERS
             al_flip_display();

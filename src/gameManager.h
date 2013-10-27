@@ -1,12 +1,13 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAMEMANAGER_H
+#define GAMEMANAGER_H
 
 #include "globals.h"
+#include <QDebug>
 
-class game
+class gameManager
 {
 public:
-    game();
+    gameManager();
 
     //in order to draw we must pass in the display object
     void Draw();
@@ -21,4 +22,4 @@ private:
 
 };
 
-#endif // GAME_H
+#endif // GAMEMANAGER_H
