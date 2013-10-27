@@ -2,7 +2,10 @@
 #define GAMEMANAGER_H
 
 #include "globals.h"
+#include "menu.h"
 #include <QDebug>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
 
 class gameManager
 {
@@ -19,7 +22,8 @@ public:
     void setGameState(int);
 private:
     int m_gameState;
-
+    ALLEGRO_FONT *listFont;
+    Menu *m_mainMenu;
 };
 
 #endif // GAMEMANAGER_H
