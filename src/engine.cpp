@@ -27,11 +27,8 @@ int engine::init() {
 
     al_install_keyboard();
     al_install_mouse();
-    al_init_font_addon();
-    al_init_ttf_addon();
-    al_init_primitives_addon();
 
-    m_gameInstance = new gameManager();
+    //m_gameInstance = new gameManager();
 
     return 1;
 }
@@ -57,7 +54,8 @@ void engine::run() {
 
     al_start_timer(timer);
 
-    while(m_gameInstance->getGameState() != CLOSE)
+
+    while(/*m_gameInstance->getGameState()*/LOADING != CLOSE)
     {
         QCoreApplication::processEvents();
         ALLEGRO_EVENT ev;
@@ -67,11 +65,11 @@ void engine::run() {
         {
             case ALLEGRO_EVENT_TIMER:
                 redraw = true;
-                m_gameInstance->Update();
+                //m_gameInstance->Update();
             break;
 
             case ALLEGRO_EVENT_DISPLAY_CLOSE:
-                m_gameInstance->setGameState(CLOSE);
+                //m_gameInstance->setGameState(CLOSE);
             break;
 
             case ALLEGRO_EVENT_KEY_DOWN:
@@ -93,12 +91,12 @@ void engine::run() {
         {
             //cout << "Drawing";
             redraw = false;
-            m_gameInstance->Draw();
+            //m_gameInstance->Draw();
 
             //FLIP BUFFERS
             al_flip_display();
 
-            if(m_gameInstance->getGameState() != GAME) //game takes care of it's own background
+            if(/*m_gameInstance->getGameState()*/LOADING != GAME) //game takes care of it's own background
             {
                 if(m_background != NULL)
                 {

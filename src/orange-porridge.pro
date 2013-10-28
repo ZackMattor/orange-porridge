@@ -15,22 +15,22 @@ TEMPLATE = app
 
 unix {
     CONFIG += console
-    LIBS += -L/usr/local/lib -lallegro -lallegro_ttf -lallegro_font -lallegro_primitives
+    LIBS += -L/usr/local/lib -lallegro -lallegro_ttf -lallegro_font -lallegro_primitives -lsfml-graphics -lsfml-window -lsfml-system
 }
 
 SOURCES += main.cpp \
     engine.cpp \
-    gameManager.cpp \
-    menu.cpp \
-    elements/allegrotextbox.cpp \
-    elements/allegrobutton.cpp \
-    helpers/starfield.h \
-    helpers/starfield.cpp
+#    gameManager.cpp \
+#    menu.cpp \
+#    elements/allegrotextbox.cpp \
+#    elements/allegrobutton.cpp \
+#    helpers/starfield.h \
+#    helpers/starfield.cpp
 
 HEADERS += \
     globals.h \
     engine.h \
-    gameManager.h \
-    menu.h \
-    elements/allegrotextbox.h \
-    elements/allegrobutton.h
+#    gameManager.h \
+#    menu.h \
+#    elements/allegrotextbox.h \
+#    elements/allegrobutton.h
