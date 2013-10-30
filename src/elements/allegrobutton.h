@@ -1,12 +1,9 @@
 #ifndef ALLEGROBUTTON_H
 #define ALLEGROBUTTON_H
 
+#include <SFML/Graphics.hpp>
 #include <QtCore/QString>
-
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_primitives.h>
+#include <QDebug>
 
 class AllegroButton
 {
@@ -18,13 +15,13 @@ class AllegroButton
 
         qint8 m_prevClick;
 
-        ALLEGRO_FONT *m_buttonFont;
-        ALLEGRO_COLOR m_inactiveColor, m_activeColor, m_textColor, m_borderColor;
+        sf::Font m_buttonFont;
+        sf::Color m_inactiveColor, m_activeColor, m_textColor, m_borderColor;
     public:
-        AllegroButton(int X, int Y, int Height, int Width, ALLEGRO_FONT *ButtonFont, ALLEGRO_COLOR InactiveColor = al_map_rgb(204,204,0), ALLEGRO_COLOR ActiveColor = al_map_rgb(204,204,204), QString Text = "Button");
+        AllegroButton(int X, int Y, int Height, int Width, sf::Font ButtonFont, sf::Color InactiveColor = sf::Color(204,204,0), sf::Color ActiveColor = sf::Color(204,204,204), QString Text = "Button");
 
-        bool Update(ALLEGRO_MOUSE_EVENT *mouse);
-        void Draw();
+        bool Update(sf::RenderWindow*);
+        void Draw(sf::RenderWindow*);
 };
 
 #endif // ALLEGROBUTTON_H

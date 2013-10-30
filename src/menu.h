@@ -1,11 +1,10 @@
 #ifndef MENU_H
 #define MENU_H
 
+#include <SFML/Graphics.hpp>
+
 #include <QList>
 #include <QString>
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
 
 #include "globals.h"
 
@@ -14,13 +13,13 @@ class AllegroButton;
 class Menu
 {
 public:
-    Menu(int x, int y, ALLEGRO_FONT *font);
+    Menu(int x, int y, sf::Font font);
     void AddItem(QString Title, int Value);
     void SetSpacing(int Gap);
 
-    int Update(bool keys[], ALLEGRO_MOUSE_EVENT *mouse);
+    int Update(sf::RenderWindow*);
 
-    void Draw();
+    void Draw(sf::RenderWindow*);
 private:
     struct menuItem
     {
@@ -33,8 +32,8 @@ private:
     double m_gameTime;
     int m_xPos, m_yPos;
     int m_spacing;
-    ALLEGRO_FONT *m_font;
-    ALLEGRO_BITMAP *background;
+    sf::Font m_font;
+    //ALLEGRO_BITMAP *background;
 };
 
 #endif // MENU_H

@@ -46,7 +46,7 @@ void AllegroTextBox::Draw()
     al_reset_clipping_rectangle();
 }
 
-void AllegroTextBox::Update(bool curKeys[255], ALLEGRO_MOUSE_EVENT *mouse)
+void AllegroTextBox::Update()
 {
 
     if(mouse->button & 1)

@@ -15,22 +15,23 @@ TEMPLATE = app
 
 unix {
     CONFIG += console
-    LIBS += -L/usr/local/lib -lallegro -lallegro_ttf -lallegro_font -lallegro_primitives -lsfml-graphics -lsfml-window -lsfml-system
+    INCLUDEPATH += /home/zmattor/Projects/libs/SFML-2.1-build/include
+    LIBS += -L/home/zmattor/Projects/libs/SFML-2.1-build/lib -lallegro -lallegro_ttf -lallegro_font -lallegro_primitives -lsfml-graphics -lsfml-window -lsfml-system
 }
 
 SOURCES += main.cpp \
     engine.cpp \
-#    gameManager.cpp \
-#    menu.cpp \
+    gameManager.cpp \
+    menu.cpp \
 #    elements/allegrotextbox.cpp \
-#    elements/allegrobutton.cpp \
+    elements/allegrobutton.cpp \
 #    helpers/starfield.h \
 #    helpers/starfield.cpp
 
 HEADERS += \
     globals.h \
     engine.h \
-#    gameManager.h \
-#    menu.h \
+    gameManager.h \
+    menu.h \
 #    elements/allegrotextbox.h \
-#    elements/allegrobutton.h
+    elements/allegrobutton.h

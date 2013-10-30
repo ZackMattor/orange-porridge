@@ -3,16 +3,23 @@
 gameManager::gameManager()
 {
     setGameState(LOADING);
-    listFont = al_load_font("TIFAX.ttf", 20, 0);
+
+    if (!listFont.loadFromFile("TIFAX.ttf"))
+    {
+        qDebug() << "Font file not loaded";
+    }
+
 }
 //in order to draw we must pass in the display object
-void gameManager::Draw() {
+void gameManager::Draw(sf::RenderWindow *window) {
+    window->clear(sf::Color::Cyan);
+
     switch(getGameState()) {
         case LOADING:
 
         break;
         case MENU:
-            m_mainMenu->Draw();
+            m_mainMenu->Draw(window);
         break;
         case ABOUT:
         break;
@@ -24,7 +31,7 @@ void gameManager::Draw() {
 }
 
 //inject mouse and keyboard through the update function
-void gameManager::Update() {
+void gameManager::Update(sf::RenderWindow* window) {
     switch(getGameState()) {
         case LOADING:
             qDebug("--Loading state--");
@@ -39,8 +46,12 @@ void gameManager::Update() {
 
             setGameState(MENU);
         break;
-        case MENU:
-            qDebug("--Menu state--");
+        case MENU: {
+            int state = m_mainMenu->Update(window);
+
+            setGameState(state == -1 ? MENU : state);
+            //qDebug("--Menu state--");
+        }
         break;
         case ABOUT:
             qDebug("--About state--");
@@ -50,6 +61,7 @@ void gameManager::Update() {
         break;
         case CLOSE:
             qDebug("--Quiting--");
+            window->close();
         break;
     }
 }

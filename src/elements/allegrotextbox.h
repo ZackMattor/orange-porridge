@@ -1,20 +1,16 @@
 #ifndef ALLEGROTEXTBOX_H
 #define ALLEGROTEXTBOX_H
 
+#include <SFML/Graphics.hpp>
 #include <QString>
-
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_primitives.h>
 
 class AllegroTextBox
 {
 public:
-    AllegroTextBox(int x, int y, int Width, int Height, ALLEGRO_FONT* Font);
+    AllegroTextBox(int x, int y, int Width, int Height, sf::Font);
 
     void Draw();
-    void Update(bool curKeys[255], ALLEGRO_MOUSE_EVENT *mouse);
+    void Update();
 
     //Get functions
     QString GetValue();
@@ -25,22 +21,22 @@ public:
     bool GetFocus();
     bool IsPasswordMode();
 
-    ALLEGRO_FONT* GetFont();
-    ALLEGRO_COLOR GetTextColor();
-    ALLEGRO_COLOR GetBackgroundColor();
-    ALLEGRO_COLOR GetFocusColor();
-    ALLEGRO_COLOR GetDefaultColor();
+    //ALLEGRO_FONT* GetFont();
+    //ALLEGRO_COLOR GetTextColor();
+    //ALLEGRO_COLOR GetBackgroundColor();
+    //ALLEGRO_COLOR GetFocusColor();
+    //ALLEGRO_COLOR GetDefaultColor();
 
     //Set functions
     void SetPos(int x, int y);
     void SetSize(int Width, int Height);
     void SetValue(QString Value);
     void SetFocus(bool Value);
-    void SetFont(ALLEGRO_FONT *Font);
-    void SetTextColor(ALLEGRO_COLOR color);
-    void SetBackgroundColor(ALLEGRO_COLOR color);
-    void SetFocusColor(ALLEGRO_COLOR color);
-    void SetDefaultColor(ALLEGRO_COLOR color);
+    //void SetFont(ALLEGRO_FONT *Font);
+    //void SetTextColor(ALLEGRO_COLOR color);
+    //void SetBackgroundColor(ALLEGRO_COLOR color);
+    //void SetFocusColor(ALLEGRO_COLOR color);
+    //void SetDefaultColor(ALLEGRO_COLOR color);
     void SetPasswordMode(bool enabled);
 
 private:
@@ -59,13 +55,13 @@ private:
     int m_sidePadding;
 
     //Font
-    ALLEGRO_FONT *m_boxFont;
+    sf::Font m_boxFont;
 
     //Colors
-    ALLEGRO_COLOR m_textColor;
-    ALLEGRO_COLOR m_backgroundColor;
-    ALLEGRO_COLOR m_focusedBorder;
-    ALLEGRO_COLOR m_defaultBorder;
+    //ALLEGRO_COLOR m_textColor;
+    //ALLEGRO_COLOR m_backgroundColor;
+    //ALLEGRO_COLOR m_focusedBorder;
+    //ALLEGRO_COLOR m_defaultBorder;
 };
 
 #endif // ALLEGROTEXTBOX_H
