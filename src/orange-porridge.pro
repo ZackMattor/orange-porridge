@@ -27,6 +27,9 @@ SOURCES += main.cpp \
     elements/allegrobutton.cpp \
 #    helpers/starfield.h \
 #    helpers/starfield.cpp
+    game/player.cpp \
+    game/game.cpp \
+    game/element.cpp
 
 HEADERS += \
     globals.h \
@@ -34,4 +37,7 @@ HEADERS += \
     gameManager.h \
     menu.h \
 #    elements/allegrotextbox.h \
-    elements/allegrobutton.h
+    elements/allegrobutton.h \
+    game/player.h \
+    game/game.h \
+    game/element.h
