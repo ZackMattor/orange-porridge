@@ -6,6 +6,7 @@
 #include <QDebug>
 
 #include "globals.h"
+#include "game/game.h"
 #include "menu.h"
 
 class gameManager
@@ -22,10 +23,16 @@ public:
     int getGameState();
     void setGameState(int);
 private:
+    bool isFirstInState();
+
+
+    bool m_firstInState;
     int m_gameState;
 
     sf::Font listFont;
+
     Menu *m_mainMenu;
+    Game *m_game;
 };
 
 #endif // GAMEMANAGER_H

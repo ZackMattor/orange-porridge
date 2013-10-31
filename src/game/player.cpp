@@ -1,7 +1,7 @@
 #include "player.h"
 
 Player::Player() {
-    m_vel = sf::Vector2<double>(0,0);
+    m_vel = sf::Vector2<double>(10,3);
     m_pos = sf::Vector2<double>(400, 300);
 }
 

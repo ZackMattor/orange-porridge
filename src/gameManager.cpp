@@ -9,6 +9,7 @@ gameManager::gameManager()
         qDebug() << "Font file not loaded";
     }
 
+    m_firstInState = true;
 }
 //in order to draw we must pass in the display object
 void gameManager::Draw(sf::RenderWindow *window) {
@@ -24,6 +25,9 @@ void gameManager::Draw(sf::RenderWindow *window) {
         case ABOUT:
         break;
         case GAME:
+            if(!m_firstInState) {
+                m_game->draw(window);
+            }
         break;
         case CLOSE:
         break;
@@ -57,7 +61,13 @@ void gameManager::Update(sf::RenderWindow* window) {
             qDebug("--About state--");
         break;
         case GAME:
-            qDebug("--Game state--");
+            if(isFirstInState()) {
+                qDebug("--STARTING Game state--");
+                m_game = new Game();
+            }
+
+            m_game->update();
+
         break;
         case CLOSE:
             qDebug("--Quiting--");
@@ -71,5 +81,14 @@ int gameManager::getGameState() {
 }
 
 void gameManager::setGameState(int state) {
+    m_firstInState = true;
     m_gameState = state;
+}
+
+bool gameManager::isFirstInState() {
+    if(m_firstInState) {
+        m_firstInState = false;
+        return true;
+    }
+    return false;
 }
