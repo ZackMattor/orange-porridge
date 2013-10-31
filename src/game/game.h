@@ -8,6 +8,7 @@
 #include "globals.h"
 #include "element.h"
 #include "player.h"
+#include "map.h"
 
 class Game
 {
@@ -18,6 +19,7 @@ public:
     void update(sf::RenderWindow * = 0);
 private:
     Player *m_player;
+    Map *m_map;
 };
 
 #endif // GAME_H
