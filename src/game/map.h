@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <QDebug>
+#include <QList>
 
 class Map
 {
@@ -12,6 +13,11 @@ public:
 
     void Draw(sf::RenderWindow*);
     void Update(sf::RenderWindow* = 0);
+
+private:
+    sf::Texture m_background;
+    sf::Texture m_planet;
+    double m_planetRotation;
 };
 
 #endif // MAP_H
