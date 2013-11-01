@@ -16,7 +16,7 @@ public:
     Game();
 
     void draw(sf::RenderWindow *);
-    void update(sf::RenderWindow * = 0);
+    void update(sf::View *camera, sf::RenderWindow * = 0);
 private:
     Player *m_player;
     Map *m_map;

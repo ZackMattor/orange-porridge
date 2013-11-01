@@ -10,6 +10,11 @@ gameManager::gameManager()
     }
 
     m_firstInState = true;
+
+    m_camera = new sf::View(sf::FloatRect(0, 0, ScreenWidth, ScreenHeight));
+
+
+
 }
 //in order to draw we must pass in the display object
 void gameManager::Draw(sf::RenderWindow *window) {
@@ -62,11 +67,15 @@ void gameManager::Update(sf::RenderWindow* window) {
         break;
         case GAME:
             if(isFirstInState()) {
+
                 qDebug("--STARTING Game state--");
                 m_game = new Game();
             }
 
-            m_game->update();
+            m_game->update(m_camera);
+
+            //apply the camera to the frame
+            window->setView(*m_camera);
 
         break;
         case CLOSE:

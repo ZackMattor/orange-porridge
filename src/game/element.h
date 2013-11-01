@@ -8,6 +8,7 @@
 class Element
 {
 public:
+    sf::Vector2<double> getPlayerPosition();
 protected:
     sf::Vector2<double> m_pos, m_vel;
     int m_id;

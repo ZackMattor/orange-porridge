@@ -29,6 +29,7 @@ private:
     bool m_firstInState;
     int m_gameState;
 
+    sf::View *m_camera;
     sf::Font listFont;
 
     Menu *m_mainMenu;
