@@ -2,8 +2,8 @@
 
 Player::Player() {
     qDebug() << "Player init";
-    m_vel = sf::Vector2<double>(0,0);
-    m_pos = sf::Vector2<double>(400, 300);
+    m_vel = sf::Vector2<float>(0,0);
+    m_pos = sf::Vector2<float>(400, 300);
 
     m_rotation = 0;
 
@@ -42,16 +42,16 @@ void Player::Update(sf::RenderWindow* window) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
         //thrustReverse();
     }
-    qDebug() << m_vel.x;
+
     m_pos += m_vel;
 }
 
 void Player::thrustFoward()
 {
-    m_vel += sf::Vector2<double>(qCos(m_rotation)*m_thrust, qSin(m_rotation) * m_thrust);
+    m_vel += sf::Vector2<float>(qCos(m_rotation)*m_thrust, qSin(m_rotation) * m_thrust);
 }
 
 void Player::thrustReverse()
 {
-    m_vel -= sf::Vector2<double>(qCos(m_rotation)*m_thrust, qSin(m_rotation) * m_thrust);
+    m_vel -= sf::Vector2<float>(qCos(m_rotation)*m_thrust, qSin(m_rotation) * m_thrust);
 }

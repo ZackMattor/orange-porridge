@@ -11,8 +11,7 @@ void Game::draw(sf::RenderWindow * window) {
 }
 
 void Game::update(sf::View *camera, sf::RenderWindow * window) {
-    sf::Vector2<double> playerPos = m_player->getPlayerPosition();
-    camera->setCenter(playerPos.x, playerPos.y);
     m_map->Update();
     m_player->Update();
+    camera->setCenter(m_player->getPlayerPosition().x, m_player->getPlayerPosition().y);
 }

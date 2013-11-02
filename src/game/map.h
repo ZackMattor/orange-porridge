@@ -6,6 +6,8 @@
 #include <QDebug>
 #include <QList>
 
+#include "planet.h"
+
 class Map
 {
 public:
@@ -16,8 +18,8 @@ public:
 
 private:
     sf::Texture m_background;
-    sf::Texture m_planet;
-    double m_planetRotation;
+
+    QList<Planet*> m_planets;
 };
 
 #endif // MAP_H

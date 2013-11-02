@@ -30,7 +30,8 @@ SOURCES += main.cpp \
     game/player.cpp \
     game/game.cpp \
     game/map.cpp \
-    game/entity.cpp
+    game/entity.cpp \
+    game/planet.cpp
 
 HEADERS += \
     globals.h \
@@ -42,4 +43,5 @@ HEADERS += \
     game/player.h \
     game/game.h \
     game/map.h \
-    game/entity.h
+    game/entity.h \
+    game/planet.h

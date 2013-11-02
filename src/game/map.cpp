@@ -2,9 +2,9 @@
 
 Map::Map() {
     m_background.loadFromFile("SpaceBackground.png");
-    m_planet.loadFromFile("Planet1.png");
-    m_planet.setSmooth(true);
-    m_planetRotation = 0;
+
+    m_planets.append(new Planet("Planet1.png", sf::Vector2<float>(0,0), 0.01, 1));
+    m_planets.append(new Planet("Planet1.png", sf::Vector2<float>(550,880), -0.03, 1));
 }
 
 void Map::Draw(sf::RenderWindow * window) {
@@ -12,15 +12,13 @@ void Map::Draw(sf::RenderWindow * window) {
     background.setTexture(m_background);
     window->draw(background);
 
-    sf::Sprite planet;
-    planet.setTexture(m_planet);
-    planet.setRotation(m_planetRotation);
-    sf::Vector2u planetSize = m_planet.getSize();
-    planet.setOrigin(planetSize.x/2, planetSize.y/2);
-    planet.setPosition(400,300);
-    window->draw(planet);
+    foreach(Planet* planet, m_planets) {
+        planet->Draw(window);
+    }
 }
 
 void Map::Update(sf::RenderWindow * window) {
-    m_planetRotation += 0.05;
+    foreach(Planet* planet, m_planets) {
+        planet->Update(window);
+    }
 }
