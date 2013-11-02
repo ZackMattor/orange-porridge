@@ -6,10 +6,10 @@
 #include <QDebug>
 #include <QtCore/qmath.h>
 
-#include "element.h"
+#include "entity.h"
 #include "globals.h"
 
-class Player : public Element
+class Player : public Entity
 {
 public:
     Player();

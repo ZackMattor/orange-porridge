@@ -1,11 +1,11 @@
-#ifndef ELEMENT_H
-#define ELEMENT_H
+#ifndef ENTITY_H
+#define ENTITY_H
 
 #include <SFML/Graphics.hpp>
 
 #include <QDebug>
 
-class Element
+class Entity
 {
 public:
     sf::Vector2<double> getPlayerPosition();
@@ -16,4 +16,4 @@ protected:
     //something to tell if it's affected by gravity?
 };
 
-#endif // ELEMENT_H
+#endif // ENTITY_H

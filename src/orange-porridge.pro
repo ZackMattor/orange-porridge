@@ -29,8 +29,8 @@ SOURCES += main.cpp \
 #    helpers/starfield.cpp
     game/player.cpp \
     game/game.cpp \
-    game/element.cpp \
-    game/map.cpp
+    game/map.cpp \
+    game/entity.cpp
 
 HEADERS += \
     globals.h \
@@ -41,5 +41,5 @@ HEADERS += \
     elements/allegrobutton.h \
     game/player.h \
     game/game.h \
-    game/element.h \
-    game/map.h
+    game/map.h \
+    game/entity.h
