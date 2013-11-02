@@ -6,7 +6,6 @@
 #include <QDebug>
 
 #include "globals.h"
-#include "entity.h"
 #include "player.h"
 #include "map.h"
 
