@@ -2,7 +2,7 @@
 
 Player::Player() {
     qDebug() << "Player init";
-    m_vel = sf::Vector2<float>(0,0);
+    m_vel = sf::Vector2<float>(5,0);
     m_pos = sf::Vector2<float>(400, 300);
 
     m_rotation = 0;
@@ -44,6 +44,10 @@ void Player::Update(sf::RenderWindow* window) {
     }
 
     m_pos += m_vel;
+}
+
+void Player::addVelocityVector(sf::Vector2<float> vel) {
+    m_vel += vel;
 }
 
 void Player::thrustFoward()

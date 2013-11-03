@@ -17,12 +17,14 @@ public:
     void Draw(sf::RenderWindow*);
     void Update(sf::RenderWindow* = 0);
 
+    void addVelocityVector(sf::Vector2<float> vel);
+
     void thrustFoward();
     void thrustReverse();
 
 private:
     sf::Texture m_texture;
-    float m_thrust = 0.15;
+    float m_thrust = 0.1;
 };
 
 #endif // PLAYER_H

@@ -48,6 +48,7 @@ void engine::run() {
 
             m_gameInstance->Draw(m_window);
             lastDraw = time;
+            m_window->display();
         }
 
         sf::Event event;
@@ -59,6 +60,6 @@ void engine::run() {
         }
 
         // end the current frame
-        m_window->display();
+
     }
 }

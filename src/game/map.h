@@ -16,6 +16,8 @@ public:
     void Draw(sf::RenderWindow*);
     void Update(sf::RenderWindow* = 0);
 
+    sf::Vector2<float> getGravityOnPoint(sf::Vector2<float>, float);
+
 private:
     sf::Texture m_background;
 

@@ -8,7 +8,7 @@
 class Entity
 {
 public:
-    sf::Vector2<float> getPlayerPosition();
+    sf::Vector2<float> getPosition();
 protected:
     sf::Vector2<float> m_pos, m_vel;
     int m_id;

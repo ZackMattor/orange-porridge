@@ -12,6 +12,9 @@ void Game::draw(sf::RenderWindow * window) {
 
 void Game::update(sf::View *camera, sf::RenderWindow * window) {
     m_map->Update();
+
+    m_player->addVelocityVector(m_map->getGravityOnPoint(m_player->getPosition(), 1));
+
     m_player->Update();
-    camera->setCenter(m_player->getPlayerPosition().x, m_player->getPlayerPosition().y);
+    camera->setCenter(m_player->getPosition().x, m_player->getPosition().y);
 }
