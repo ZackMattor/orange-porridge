@@ -13,6 +13,17 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+win32 {
+    INCLUDEPATH += C:/SFML-2.1/include
+
+    LIBS += C:/SFML-2.1/lib/libsfml-system.a \
+        C:/SFML-2.1/lib/libsfml-window.a \
+        C:/SFML-2.1/lib/libsfml-graphics.a \
+        C:/SFML-2.1/lib/libsfml-audio.a \
+        C:/SFML-2.1/lib/libsfml-network.a
+}
+
+
 unix {
     CONFIG += console
     INCLUDEPATH += /home/zmattor/Projects/libs/SFML-2.1-build/include
