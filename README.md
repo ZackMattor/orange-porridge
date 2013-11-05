@@ -6,14 +6,14 @@ A space shoot-em-up game with gravity and stuff. This project is currently unnam
 
 Code Stuff
 ================
-Here I will try to explain what happens in some of the classes. The basic flow is that the main.cpp spins up the engine which initializes all of the allegro libraries, then jumps into the allegro event loop. game.h is then called in to handle game-realted functions.
+build
+---------------
+ - Qt creator with Qt5.x
+ - SFML 2.1
 
 engine.h
 ----------------
-Handles all of the allegro and behind the scenes stuff.
-- Allegro event loop
-- Key presses
-- Mouse movements
+The engine handles all of the game timing, the gmae runs at 50 ticks a second. 
 
 game.h
 ----------------
