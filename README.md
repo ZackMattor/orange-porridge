@@ -10,6 +10,9 @@ build
 ---------------
  - Qt creator with Qt5.x
  - SFML 2.1
+ - 
+
+On linux it seems like you should compile it yourself. They do have a pre-built binary but i could not get that working with the newer deps in ubuntu 13.04 but it worked fine just to compile it.
 
 engine.h
 ----------------
