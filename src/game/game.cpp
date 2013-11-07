@@ -18,6 +18,8 @@ void Game::update(sf::View *camera, sf::RenderWindow * window) {
     m_player->addVelocityVector(m_map->getGravityOnPoint(m_player->getPosition(), 1));
 
     m_player->Update();
+    camera->zoom(1.001);
+    camera->rotate(1.001);
     camera->setCenter(m_player->getPosition().x, m_player->getPosition().y);
 }
 
